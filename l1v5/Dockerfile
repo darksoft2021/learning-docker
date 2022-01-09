@@ -15,5 +15,4 @@ LABEL multi.com.example.vendor="DarkSoft2021" \
 EXPOSE 31337
 
 COPY . .
-CMD ["php", "simple-daemon.php"]
-
+ENTRYPOINT  ["php", "simple-daemon.php"]
