@@ -80,7 +80,9 @@ while(1)
             default :
                 //echo "Inputed text: " . $line . "\r\n";
                 // записываем данные из буфера в сокет
-                if(!@socket_write($accept, "Unknown command, 'bye' to exit.\r\n"))
+                //"date("Y-m-d H:i:s", time()) : Unknown command, 'bye' to exit.\r\n"
+                $message="\r\n\r\n" . date("Y-m-d H:i:s") . ": " . $line . " \r\nUnknown command, enter 'bye' to exit or 'die' for kill daemon.\r\n\r\n";
+                if(!@socket_write($accept, $message))
                   {
                     print(date("Y-m-d H:i:s", time())." STATUS: client close connection\r\n\r\n");
                     break 2;

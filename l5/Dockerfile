@@ -6,7 +6,6 @@ RUN docker-php-ext-install -j$(nproc) sockets
 
 WORKDIR /docker/learning-docker/l5
 
-COPY . .
 
 LABEL multi.com.example.vendor="DarkSoft2021" \
       multi.version="2.6" \
@@ -15,5 +14,6 @@ LABEL multi.com.example.vendor="DarkSoft2021" \
 
 EXPOSE 31337
 
+COPY . .
 CMD ["php", "simple-daemon.php"]
 
