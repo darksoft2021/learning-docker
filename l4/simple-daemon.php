@@ -1,5 +1,5 @@
 <?
-echo "\r\n\r\nIt's work!\r\n\r\n";
+echo "\r\n\r\nIt's work!\r\n\r\nType any commands for test it, type \"bye\" for disconnect or type \"die\" for stopping container";
 
 
 // Создание сокета TCP: resource socket_create(1, 2, 3);
@@ -50,7 +50,7 @@ while(1)
        } 
 
       // выводим рандомную строку из файла
-      socket_write($accept, "Daemon is alive!\r\n\r\n");
+      socket_write($accept, "Daemon is alive!\r\n\r\nType any commands for test it, type \"bye\" for disconnect or type \"die\" for stopping container\r\n\r\n");
       print(date("Y-m-d H:i:s", time())." STATUS: client connected\r\n\r\n");
       while(TRUE)
         {
