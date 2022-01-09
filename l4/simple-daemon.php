@@ -16,10 +16,7 @@ if(($socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP)) < 0)
         socket_strerror(socket_last_error()) . "\r\n");
 } 
 
-// Биндим сокет на определённый адрес и порт: boolean socket_bind(1, 2, 3);
-// 1) Дескриптор сокета
-// 2) IP адрес, или путь до сокета в Unix
-// 3) Порт (в нашем случае порт = 31337)
+// Биндим сокет на определённый адрес и порт: 
 if(($error = socket_bind($socket, "0.0.0.0", 31337)) < 0)
 {
     socket_close($socket); 
@@ -28,8 +25,7 @@ if(($error = socket_bind($socket, "0.0.0.0", 31337)) < 0)
 } 
 
 // Прослушиваем сокет: boolean socket_listen(1, 2);
-// 1) дескриптор сокета
-// backlog размер очереди запрросов ожидающих соединения
+// backlog размер очереди запросов ожидающих соединения
 if(($error = socket_listen($socket, 5)) < 0)
 {
     socket_close($socket); 
@@ -60,7 +56,7 @@ while(1)
                 print("Невозможно прослушать сокет: " .
                 socket_strerror(socket_last_error()) . "\r\n\r\n");
                 break 2;
-             }             
+             }
            switch(strtolower(trim($line)))
              {
                 case "bye"  :
