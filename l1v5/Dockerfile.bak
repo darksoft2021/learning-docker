@@ -1,4 +1,4 @@
-FROM php:7.3-fpm AS Darksoft2021-simple-php-daemon
+FROM php:fpm AS Darksoft2021-simple-php-daemon
 
 RUN apt-get update && apt-get install -y \
 libmcrypt-dev 
